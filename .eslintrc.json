@@ -28,7 +28,7 @@
 			1,
 			{ "extensions": [".ts", ".js", ".tsx", ".jsx"] }
 		],
-		"indent": [2, "tab"],
+		"indent": [2, "tab", { "SwitchCase": 1 }],
 		"quote-props": ["error", "as-needed"]
 	}
 }
