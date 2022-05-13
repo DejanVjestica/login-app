@@ -29,6 +29,7 @@
 			{ "extensions": [".ts", ".js", ".tsx", ".jsx"] }
 		],
 		"indent": [2, "tab", { "SwitchCase": 1 }],
-		"quote-props": ["error", "as-needed"]
+		"quote-props": ["error", "as-needed"],
+		"@typescript-eslint/no-non-null-assertion": "off"
 	}
 }
