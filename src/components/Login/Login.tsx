@@ -1,7 +1,7 @@
 import React, { useState, useReducer, useEffect } from 'react'
 
-import Card from '../UI/Card/Card'
-import Button from '../UI/Button/Button'
+import { Card } from '../UI/Card/Card'
+import { Button } from '../UI/Button/Button'
 
 import classes from './Login.module.scss'
 
@@ -47,7 +47,7 @@ const passReducer = (state: PassReducerState, action: PassReducerAction) => {
 	}
 }
 
-const Login = (props: LoginProps) => {
+export const Login = (props: LoginProps) => {
 	const [formIsValid, setFormIsValid] = useState<boolean>(false)
 
 	const [emailState, dispatchEmail] = useReducer(emailReducer, {
@@ -151,5 +151,3 @@ const Login = (props: LoginProps) => {
 		</Card>
 	)
 }
-
-export default Login

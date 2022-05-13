@@ -1,10 +1,11 @@
 import React, { useContext } from 'react'
 
 import { AuthContext } from '../../context/auth-content'
+import { Button } from '../UI/Button/Button'
 
 import classes from './Navigation.module.scss'
 
-const Navigation = () => {
+export const Navigation = () => {
 	const context = useContext(AuthContext)
 
 	return (
@@ -22,17 +23,15 @@ const Navigation = () => {
 				)}
 				{context.isLoggedIn && (
 					<li>
-						<button
+						<Button
 							onClick={
 								context.onLogout
 							}>
 							Logout
-						</button>
+						</Button>
 					</li>
 				)}
 			</ul>
 		</nav>
 	)
 }
-
-export default Navigation

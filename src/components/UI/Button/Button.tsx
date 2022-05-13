@@ -5,7 +5,9 @@ interface ButtonProps extends React.ComponentProps<'button'> {
 	children: React.ReactNode
 }
 
-const Button: React.FunctionComponent<ButtonProps> = (props: ButtonProps) => {
+export const Button: React.FunctionComponent<ButtonProps> = (
+	props: ButtonProps
+) => {
 	return (
 		<button
 			type={props.type || 'button'}
@@ -16,5 +18,3 @@ const Button: React.FunctionComponent<ButtonProps> = (props: ButtonProps) => {
 		</button>
 	)
 }
-
-export default Button

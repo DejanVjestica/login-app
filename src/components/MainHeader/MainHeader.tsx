@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Navigation from './Navigation'
+import { Navigation } from './Navigation'
 import classes from './MainHeader.module.scss'
 
-const MainHeader = () => {
+export const MainHeader = () => {
 	return (
 		<header className={classes['main-header']}>
 			<h1>A Typical Page</h1>
@@ -11,5 +11,3 @@ const MainHeader = () => {
 		</header>
 	)
 }
-
-export default MainHeader

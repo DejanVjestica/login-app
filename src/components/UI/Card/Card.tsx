@@ -7,12 +7,10 @@ type CardProps = {
 	children: React.ReactNode
 }
 
-const Card = (props: CardProps) => {
+export const Card = (props: CardProps) => {
 	return (
 		<div className={`${classes.card} ${props.className}`}>
 			{props.children}
 		</div>
 	)
 }
-
-export default Card

@@ -2,11 +2,11 @@ import React, { useContext } from 'react'
 
 import { AuthContext } from './context/auth-content'
 
-import Login from './components/Login/Login'
-import Home from './components/Home/Home'
-import MainHeader from './components/MainHeader/MainHeader'
+import { Login } from './components/Login/Login'
+import { Home } from './components/Home/Home'
+import { MainHeader } from './components/MainHeader/MainHeader'
 
-function App() {
+export function App() {
 	const context = useContext(AuthContext)
 	return (
 		<>
@@ -20,5 +20,3 @@ function App() {
 		</>
 	)
 }
-
-export default App
