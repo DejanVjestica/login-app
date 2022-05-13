@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/display-name */
+import React, { useRef, useImperativeHandle } from 'react'
 
 import classes from './Input.module.scss'
 
@@ -7,7 +8,17 @@ interface InputProps extends React.ComponentProps<'input'> {
 	isValid: boolean
 }
 
-export const Input = (props: InputProps) => {
+export const Input = React.forwardRef((props: InputProps, ref) => {
+	const inputRef = useRef<HTMLInputElement>(null)
+
+	const activate = (): void => {
+		inputRef.current?.focus()
+	}
+
+	useImperativeHandle(ref, () => {
+		return { focus: activate }
+	})
+
 	return (
 		<div
 			className={`${classes.control} ${
@@ -15,6 +26,7 @@ export const Input = (props: InputProps) => {
 			}`}>
 			<label htmlFor={props.id}>{props.label}</label>
 			<input
+				ref={inputRef}
 				type={props.type}
 				id={props.id}
 				value={props.value}
@@ -23,4 +35,4 @@ export const Input = (props: InputProps) => {
 			/>
 		</div>
 	)
-}
+})
