@@ -3,7 +3,7 @@ import React from 'react'
 import classes from './Input.module.scss'
 
 interface InputProps extends React.ComponentProps<'input'> {
-	children: React.ReactNode
+	label: string
 	isValid: boolean
 }
 
@@ -13,7 +13,7 @@ export const Input = (props: InputProps) => {
 			className={`${classes.control} ${
 				props.isValid === false ? classes.invalid : ''
 			}`}>
-			<label htmlFor={props.id}>{props.children}</label>
+			<label htmlFor={props.id}>{props.label}</label>
 			<input
 				type={props.type}
 				id={props.id}

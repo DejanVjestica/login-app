@@ -112,22 +112,22 @@ export const Login = () => {
 			<form onSubmit={submitHandler}>
 				<Input
 					isValid={emailState.isValid}
+					label="E-Mail"
 					type="email"
 					id="email"
 					value={emailState.value}
 					onChange={emailChangeHandler}
-					onBlur={validateEmailHandler}>
-					E-Mail
-				</Input>
+					onBlur={validateEmailHandler}></Input>
 				<Input
 					isValid={passState.isValid}
+					label="Password"
 					type="password"
 					id="password"
 					value={passState.value}
 					onChange={passwordChangeHandler}
-					onBlur={validatePasswordHandler}>
-					Password
-				</Input>
+					onBlur={
+						validatePasswordHandler
+					}></Input>
 				<div className={classes.actions}>
 					<Button
 						type="submit"
