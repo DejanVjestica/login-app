@@ -12,9 +12,7 @@ export function App() {
 		<>
 			<MainHeader />
 			<main>
-				{!context.isLoggedIn && (
-					<Login onLogin={context.onLogin} />
-				)}
+				{!context.isLoggedIn && <Login />}
 				{context.isLoggedIn && <Home />}
 			</main>
 		</>

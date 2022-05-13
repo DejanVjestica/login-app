@@ -1,8 +1,3 @@
-// Component props type
-export type LoginProps = {
-	onLogin: (email: string, password: string) => void
-}
-
 // Types for EmailReduser
 export type EmailReducerState = {
 	value: string

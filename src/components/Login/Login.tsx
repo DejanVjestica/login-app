@@ -1,12 +1,12 @@
-import React, { useState, useReducer, useEffect } from 'react'
+import React, { useState, useReducer, useEffect, useContext } from 'react'
 
 import { Card } from '../UI/Card/Card'
 import { Button } from '../UI/Button/Button'
+import { AuthContext } from '../../context/auth-content'
 
 import classes from './Login.module.scss'
 
 import {
-	LoginProps,
 	EmailReducerState,
 	EmailReducerAction,
 	PassReducerState,
@@ -47,7 +47,7 @@ const passReducer = (state: PassReducerState, action: PassReducerAction) => {
 	}
 }
 
-export const Login = (props: LoginProps) => {
+export const Login = () => {
 	const [formIsValid, setFormIsValid] = useState<boolean>(false)
 
 	const [emailState, dispatchEmail] = useReducer(emailReducer, {
@@ -59,6 +59,8 @@ export const Login = (props: LoginProps) => {
 		value: '',
 		isValid: false
 	})
+
+	const context = useContext(AuthContext)
 
 	const { isValid: emailIsValid } = emailState
 	const { isValid: passIsValid } = passState
@@ -101,7 +103,7 @@ export const Login = (props: LoginProps) => {
 
 	const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
-		props.onLogin(emailState.value, passState.value)
+		context.onLogin(emailState.value, passState.value)
 	}
 
 	return (
